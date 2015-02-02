@@ -10,15 +10,29 @@
     	<div id="father">
     		<div id="right">
 		        <div id="controls">
-		        	Scale :: <input id="sliderW" type="range" step="20" value="100"/><br/>
-		        	X :: <input id="sliderX" type="range" min="100" max="500" step="50" value="100"/><br/>
-		        	Y :: <input id="sliderY" type="range" min="100" max="500" step="50" value="100"/>
+                    Controls<br>
+                    Scale :: <input id="sliderW" type="range" /><br/>
+                    Move X :: <input id="sliderX" type="range"/><br/>
+                    Move Y :: <input id="sliderY" type="range"/><br/>
+                    Free mode :: <input id="freeMode" type="checkbox" ><br>
+                    <button id="loadHistory"  onclick="loadHistory()" >Reload All Races</button><br/>
+                    <br/><br/>
+                    How to play ::<br>
+                    <ul style="list-style-type:decimal;padding-left:2em">
+                        <li >Put your name/nick (optional)</li>
+                        <li >Click on the map and create a path to run the entire circuit</li>
+                        <li >Click on the Save & Play button to start, use the up arrow on the keyboard to accelarate</li>
+                        <li >After you finished the race, click on Free Mode (Optional) to play around</li>
+                        <li >Send the link to challenge your friend</li>
+                    </ul>
+                    <br/><br/>
+                    Player Name :: <input id="playerName"/><br/>
+		            <button id="saveRace"   >Play and Save Race</button><br/>
+                    <br/><br/>
+                    All Races:: <br/>
+
 		        </div>
-		        <div id="stats"></div>
-		        <div id="buttons">
-		            <button id="startAnimation">Start</button>
-		            <button id="stopAnimation">Stop</button>
-		        </div>
+                <div id="history"> </div>
 		    </div>
 	    	<div id="left">
 		        <svg id="svg" version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
@@ -40,6 +54,7 @@
 		            </g>
 		        </svg>
 		        <canvas id="canvas1" style="z-index: 2; position:absolute; left:0px; top:0px;"></canvas>
+		        <canvas id="canvasRace" style="z-index: 3; position:absolute; left:0px; top:0px;"></canvas>
 		    </div>
 	    </div>
     
